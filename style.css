@@ -44,3 +44,92 @@
   --wengeBrown: hsl(30, 10%, 34%);
   --darkCharcoal: hsl(24, 5%, 18%);
 }
+
+body {
+  font-family: Outfit, sans-serif;
+  font-display: swap;
+  font-size: 1rem;
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  color: var(--nutmeg);
+}
+
+h3 {
+  font-family: Outfit, sans-serif;
+  font-size: 1.5rem;
+  color: var(--darkRaspberry);
+  margin-bottom: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+p,
+li {
+  color: var(--darkCharcoal);
+}
+main {
+  height: 100svh;
+}
+
+.wrapper {
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+hr {
+  margin-bottom: 1.5rem;
+}
+
+.recipe__time {
+  background-color: var(--roseWhite);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.recipe__time li::marker {
+  color: var(--darkRaspberry);
+}
+
+.recipe__time ul,
+.recipe__time li {
+  padding-left: 1rem;
+}
+
+.recipe__time li:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.recipe__time span,
+.recipe__instructions span {
+  color: var(--wengeBrown);
+  font-weight: 700;
+}
+
+.recipe__instructions ol,
+.recipe__instructions li {
+  padding-left: 1rem;
+}
+
+.recipe__instructions li:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.recipe__instructions li::marker {
+  color: var(--nutmeg);
+  font-weight: 600;
+}

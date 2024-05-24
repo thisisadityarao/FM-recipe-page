@@ -216,4 +216,12 @@ td {
     padding: clamp(2rem, 1.079rem + 2.63vw, 3.25rem);
     padding-top: 0;
   }
+
+  h1 {
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    letter-spacing: 0.1rem;
+  }
 }

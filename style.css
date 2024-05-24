@@ -48,56 +48,88 @@
 body {
   font-family: Outfit, sans-serif;
   font-display: swap;
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.84rem + 0.68vw, 1.25rem);
+  background-color: var(--eggshell);
+}
+
+hr {
+  border: 1px solid var(--lightGrey);
+  margin-top: clamp(2rem, 1.359rem + 2.74vw, 3rem);
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
 }
 
 h1,
 h2 {
   font-family: "Young Serif", serif;
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1.25rem, 0.609rem + 2.74vw, 2.25rem);
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1.449rem + 3.42vw, 3.5rem);
 }
 
 h2 {
+  font-size: clamp(1.5rem, 0.859rem + 2.74vw, 2.5rem);
   color: var(--nutmeg);
 }
 
 h3 {
   font-family: Outfit, sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 0.769rem + 2.05vw, 2rem);
   color: var(--darkRaspberry);
   margin-bottom: 1.25rem;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
+
 p,
-li {
+li,
+th {
   color: var(--darkCharcoal);
 }
+
+ol {
+  padding-left: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  padding-left: 1rem;
+}
+
 main {
   height: 100svh;
 }
 
+.recipe {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--white);
+}
+
 .wrapper {
-  padding: 1.5rem;
+  padding: clamp(1.25rem, -0.777rem + 8.6486vi, 2.25rem);
+  padding-top: 0;
 }
 
 section {
-  margin-bottom: 1.5rem;
-}
-
-hr {
-  margin-bottom: 1.5rem;
+  margin-top: clamp(1.5rem, 0.538rem + 4.1vw, 3rem);
 }
 
 .recipe__time {
   background-color: var(--roseWhite);
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 0.859rem + 2.74vw, 2.5rem);
   border-radius: 0.5rem;
 }
 
@@ -105,13 +137,8 @@ hr {
   color: var(--darkRaspberry);
 }
 
-.recipe__time ul,
-.recipe__time li {
-  padding-left: 1rem;
-}
-
 .recipe__time li:not(:last-child) {
-  margin-bottom: 0.25rem;
+  margin-bottom: clamp(0.25rem, -0.071rem + 1.37vw, 0.75rem);
 }
 
 .recipe__time span,
@@ -120,16 +147,70 @@ hr {
   font-weight: 700;
 }
 
-.recipe__instructions ol,
-.recipe__instructions li {
-  padding-left: 1rem;
+.recipe__ingredients li::marker {
+  color: var(--nutmeg);
+}
+
+.recipe__ingredients li:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.84rem + 0.68vw, 1.25rem);
 }
 
 .recipe__instructions li:not(:last-child) {
-  margin-bottom: 0.25rem;
+  margin-bottom: clamp(1rem, 0.84rem + 0.68vw, 1.25rem);
 }
 
 .recipe__instructions li::marker {
   color: var(--nutmeg);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: clamp(0.5rem, 0.25rem + 1.25vw, 1rem);
+  width: 50%;
+}
+
+th:not(tr:last-child > th),
+td:not(tr:last-child > td) {
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+tr th {
+  font-weight: normal;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+td {
+  color: var(--nutmeg);
+  font-weight: 700;
+}
+
+/******************** For Screen-Size > 560px(35rem) ***********************/
+
+@media only screen and (min-width: 35rem) {
+  /* Padding value below is not really a magic number. The padding on the left and right
+  * of `.wrapper` element is 32px/2rem at 560px viewport-width. So we apply this exact padding
+  * to `wrapper__img` at 560px viewport-width, and scale it proportionally to screen-width, between 2rem and 3.25rem.
+  */
+  .wrapper__img {
+    padding: clamp(2rem, 1.079rem + 2.63vw, 3.25rem);
+    padding-bottom: 0;
+  }
+
+  .recipe__img {
+    border-radius: 0.5rem;
+  }
+
+  /* In order to keep the left and right padding proportional between the image and rest of the text content we apply the same padding value to the `wrapper` div as `wrapper_img` div.
+  */
+  .wrapper {
+    padding: clamp(2rem, 1.079rem + 2.63vw, 3.25rem);
+    padding-top: 0;
+  }
 }

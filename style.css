@@ -194,9 +194,10 @@ td {
 /******************** For Screen-Size > 560px(35rem) ***********************/
 
 @media only screen and (min-width: 35rem) {
-  /* Padding value below is not really a magic number. The padding on the left and right
-  * of `.wrapper` element is 32px/2rem at 560px viewport-width. So we apply this exact padding
-  * to `wrapper__img` at 560px viewport-width, and scale it proportionally to screen-width, between 2rem and 3.25rem.
+  /* Padding value below is not really a magic number. The padding on the left
+  * and right of `.wrapper` element is 32px/2rem at 560px viewport-width. So
+  * we apply this exact padding to `wrapper__img` at 560px viewport-width, and
+  * scale it proportionally to screen-width, between 2rem and 3.25rem.
   */
   .wrapper__img {
     padding: clamp(2rem, 1.079rem + 2.63vw, 3.25rem);
@@ -207,7 +208,9 @@ td {
     border-radius: 0.5rem;
   }
 
-  /* In order to keep the left and right padding proportional between the image and rest of the text content we apply the same padding value to the `wrapper` div as `wrapper_img` div.
+  /* In order to keep the left and right padding proportional between the
+  * image and rest of the text content we apply the same padding value to the
+  * `wrapper` div as `wrapper_img` div.
   */
   .wrapper {
     padding: clamp(2rem, 1.079rem + 2.63vw, 3.25rem);

@@ -64,7 +64,7 @@ ol {
 }
 
 h1,
-h2 {
+h3 {
   font-family: "Young Serif", serif;
   margin-bottom: clamp(1.25rem, 0.609rem + 2.74vw, 2.25rem);
 }
@@ -74,15 +74,15 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.5rem, 0.859rem + 2.74vw, 2.5rem);
-  color: var(--nutmeg);
-}
-
-h3 {
   font-family: Outfit, sans-serif;
   font-size: clamp(1.25rem, 0.769rem + 2.05vw, 2rem);
   color: var(--darkRaspberry);
   margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 0.859rem + 2.74vw, 2.5rem);
+  color: var(--nutmeg);
 }
 
 p {
